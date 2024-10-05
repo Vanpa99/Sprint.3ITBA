@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/prop-types": "^15.7.13",
+    "next": "14.2.14",
+    "prop-types": "^15.8.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.14"
+    "react-dom": "^18"
   }
 }

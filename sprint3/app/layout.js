@@ -1,5 +1,8 @@
 // import localFont from "next/font/local";
 import "./Global.css";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import Footer from "./Footer";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -21,8 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <h1>ASHEE</h1>
-        <div style={{ border: "1px solid black" }}>{children}</div>
+        <Header></Header>
+        <Sidebar></Sidebar>
+        {children}
+        <Footer></Footer>
+        
       </body>
     </html>
   );

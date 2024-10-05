@@ -1,0 +1,153 @@
+.accountsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.accountsTable th,
+.accountsTable td {
+  border: 1px solid var(--difuminado);
+  padding: 10px;
+  text-align: center;
+}
+
+.accountsTable th {
+  background-color: var(--oscuro);
+  color: var(--claro);
+}
+
+.accountsTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.accountsTable tr:hover {
+  background-color: #ddd;
+}
+
+/* Estilos para el resumen de cuentas */
+.accountSummary {
+  margin-top: 20px;
+}
+
+.accountSummary h3 {
+  margin-bottom: 10px;
+}
+
+.accountSummary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accountSummary ul li {
+  background: var(--difuminado);
+  padding: 10px;
+  border-bottom: 1px solid var(--oscuro);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+  background-color: var(--claro);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--oscuro);
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+.headerModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--oscuro);
+  color: var(--claro);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.close {
+  color: var(--claro);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 1rem;
+  text-align: center;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--oscuro);
+  background-color: var(--claro);
+}
+
+.modalContent p {
+  padding: 10px;
+  background-color: var(--difuminado);
+  border-bottom: 1px solid var(--oscuro);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .accountsTable {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-auto-rows: auto;
+  }
+  .accountsTable th,
+  .accountsTable td {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .accountSummary ul li {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+@media (max-width: 523px) {
+  .accounts-Table {
+    grid-template-columns: 1fr;
+  }
+  .accountsTable th,
+  .accountsTable td {
+    font-size: 12px; /* Reducimos aún más el tamaño del texto */
+    padding: 6px;
+  }
+  .accountSummary h3 {
+    font-size: 18px; /* Ajustamos el tamaño del título en el resumen de cuentas */
+  }
+
+  .accountSummary ul li {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+@media (max-width: 350px) {
+  .accountsTable {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .accountsTable table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .accountsTable th,
+  .accountsTable td {
+    word-wrap: break-word;
+    font-size: 12px;
+    padding: 5px;
+  }
+  .accountsTable {
+    overflow-x: auto;
+  }
+}

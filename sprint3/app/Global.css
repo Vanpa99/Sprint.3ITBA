@@ -4,11 +4,11 @@
   --difuminado: #17263028;
 }
 
-* {
+ * {
   margin: 0;
   padding: 0;
-  background-color: wheat;
-}
+  background-color: var(--claro);
+} 
 
 #root {
   display: flex;
