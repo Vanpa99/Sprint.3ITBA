@@ -17,19 +17,13 @@ Si usa UseEffect o UseState vas a tener que ponerle la sentencia de "use client"
 ---------------------------ERROR DE PROPTYPES ARREGLADO-----------------------------------
 1)para el error de Proptypes intenté instalar las dependencias como decia el txt del node_modules "npm install --save @types/prop-types"💢NO ME FUNCIONÓ LPM pero se supone que ya tenemos los PropTypes instalados.
 2)Verificar si prop-types está en package.json (si estaban pero el que el que es para Typescript). "@types/prop-types": "^15.7.13".
-3) npm install prop-types (para que funcione en js o ts). "prop-types": "^15.8.1",
+3) npm install prop-types (para que funcione en js o ts). "prop-types": "^15.8.1",✅
 ----------------------------------------------------------------
 
 
+Sidebar.js (1:1) error de Link por lo del React-Router-Dom, como next tiene su sistema de enrutamiento hubo que modificar el código.✅
 
-Api.js (7:1)Reut
-Boton.jsx (2:1)Proptypes
-InputField.jsx (2:1)Proptypes (3:1)Reut (31:1 - 40:1)PropTypes
-Selector.jsx (2:1)Styles 
-
-Sidebar.js (1:1) error de Link por lo del React-Router-Dom, como next tiene su sistema de enrutamiento hubo que modificar el código.
-
-para el error de Proptypes intenté instalar las dependencias como decia el txt del node_modules "npm install --save @types/prop-types".
+para el error de Proptypes intenté instalar las dependencias como decia el txt del node_modules "npm install --save @types/prop-types".✅
 
 1)Creé la carpeta modules y traje los css que estaban en el Sprint2.
 
