@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Boton from "../Reutilizables/Boton";
-import InputField from "../Reutilizables/InputField";
 import Selector from "../Reutilizables/Selector";
+import InputField from "../reutilizables/InputField";
 import { opcionesAccion } from "../Reutilizables/Selector";
-import reut from "../../modules/Reut.module.css";
+import pagar from "../../modules/Pagar.module.css";
 
 function Pagar() {
   const [accion, setAccion] = useState("transferencia");
@@ -27,15 +27,16 @@ function Pagar() {
   };
 
   return (
-    <div className={reut.contPrincipal}>
-      <h2 className={reut.sectionTitle}>Métodos de Pago</h2>
-      <p className={reut.infoForm}>
+    <div className={pagar.contPrincipal}>
+      <h2 className={pagar.sectionTitle}>Métodos de Pago</h2>
+      <p className={pagar.infoForm}>
         Para realizar una transferencia o pagar con codigo, complete los
         siguientes datos:
       </p>
-      <form onSubmit={handleSubmit} id="formId" className={reut.formContainer}>
+      <form onSubmit={handleSubmit} id="formId" className={pagar.formContainer}>
         {/*P U L I R*/}
         <Selector
+          className={pagar.selectOp}
           name="accion"
           label="Seleccione el tipo de operación:"
           options={opcionesAccion}
@@ -44,6 +45,7 @@ function Pagar() {
         {accion === "transferencia" && (
           <article>
             <InputField
+              className={pagar.inputField}
               label="Ingrese CBU:"
               type="number"
               name="cbu"
@@ -52,6 +54,7 @@ function Pagar() {
               required
             />
             <InputField
+              className={pagar.inputField}
               label="Ingrese el monto:"
               type="number"
               name="monto-transferencia"
@@ -64,6 +67,7 @@ function Pagar() {
         {accion === "pago" && (
           <article>
             <InputField
+              className={pagar.inputField}
               label="Ingrese el código de pago:"
               type="number"
               name="codigo-pago"
@@ -73,7 +77,7 @@ function Pagar() {
             />
           </article>
         )}
-        <div className={reut.btnContainer}>
+        <div className={pagar.btnContainer}>
           <Boton type="submit" text="Enviar" action="submit" />
           {/* P U L I R */}
           <Boton type="button" text="Limpiar" action="clear" />

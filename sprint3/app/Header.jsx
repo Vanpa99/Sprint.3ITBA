@@ -1,6 +1,7 @@
+"use client";
 import styles from "../modules/Header.module.css";
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Logo from "./assets/LogoITPowerBank.png";
 import Boton from "./Reutilizables/Boton";
 import Image from "next/image";
@@ -21,8 +22,8 @@ function Header({ handleLogout }) {
   );
 }
 
-Header.propTypes = {
-  handleLogout: PropTypes.func.isRequired,
-};
+// Header.propTypes = {
+//   handleLogout: PropTypes.func.isRequired,
+// };
 
 export default Header;
