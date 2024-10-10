@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import InputField from "./InputField";
 import Selector from "./Selector";
 import Boton from "./Boton";
 import { opcionesMoneda } from "./Selector.jsx";
-import reut from "../../modules/Reut.module.css"; 
+import mon from "../../modules/Moneda.module.css";
 
 function Saldo({ saldo, fromCurrency, toCurrency }) {
   const [saldoConvertido, setSaldoConvertido] = useState(null);
@@ -65,14 +65,15 @@ function Moneda() {
   }, [amount, fromCurrency, toCurrency, url]);
 
   return (
-    <section className={reut.contPrincipal}>
-      <h3 className={reut.sectionTitle}>Convertidor de Monedas</h3>
-      <p className={reut.infoForm}>
+    <section className={mon.contPrincipal}>
+      <h3 className={mon.sectionTitle}>Convertidor de Monedas</h3>
+      <p className={mon.infoForm}>
         A continuacion le ofrecemos nuestro servicio de convertidor de monedas:
       </p>
 
-      <form className={reut.formContainer}>
+      <form className={mon.formContainer}>
         <Selector
+          className={mon.selectOp}
           name="fromCurrency"
           label="Moneda a convertir:"
           options={opcionesMoneda}
@@ -80,6 +81,7 @@ function Moneda() {
           onChange={(e) => setFromCurrency(e.target.value)}
         />
         <InputField
+          className={mon.inputField}
           type="number"
           id="monto"
           value={amount}
@@ -88,6 +90,7 @@ function Moneda() {
         />
         <Boton type="button" text="Limpiar" action="clear" />
         <Selector
+          className={mon.selectOp}
           name="toCurrency"
           label="Moneda convertida:"
           options={opcionesMoneda}
@@ -95,6 +98,7 @@ function Moneda() {
           onChange={(e) => setToCurrency(e.target.value)}
         />
         <InputField
+          className={mon.inputField}
           for="result"
           type="text"
           id="result"

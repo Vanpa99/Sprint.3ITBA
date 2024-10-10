@@ -3,27 +3,18 @@
   margin: 0 auto;
   padding: 20px;
 }
-
 .sectionTitle {
   text-align: center;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
-
-.descPrincipal {
-  margin-bottom: 10px;
-  padding: 20px;
-}
-
 .subtitle {
   text-align: center;
   margin-top: -1rem;
 }
-
 .infoForm {
   margin: 10px 0 0 1rem;
 }
-
 .formContainer {
   border: 2px solid var(--difuminado);
   max-width: 80%;
@@ -31,18 +22,20 @@
   padding: 20px;
   border-radius: 5px;
 }
-
 .inputField {
   width: calc(100% - 22px);
   padding: 10px;
   border: 1px solid var(--difuminado);
   border-radius: 5px;
   margin-bottom: 15px;
-  background-color: field;
+  background-color: white;
 }
 
-.btnContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+.inputFieldDisabled {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid var(--difuminado);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: disabled;
 }

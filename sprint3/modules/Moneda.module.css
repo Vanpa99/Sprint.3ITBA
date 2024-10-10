@@ -10,16 +10,6 @@
   font-size: 1.5rem;
 }
 
-.descPrincipal {
-  margin-bottom: 10px;
-  padding: 20px;
-}
-
-.subtitle {
-  text-align: center;
-  margin-top: -1rem;
-}
-
 .infoForm {
   margin: 10px 0 0 1rem;
 }
@@ -32,6 +22,10 @@
   border-radius: 5px;
 }
 
+.selectOp {
+  margin: 0rem 0rem 2px 1rem;
+}
+
 .inputField {
   width: calc(100% - 22px);
   padding: 10px;
@@ -39,10 +33,4 @@
   border-radius: 5px;
   margin-bottom: 15px;
   background-color: field;
-}
-
-.btnContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }

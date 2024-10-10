@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import React from "react";
-import PropTypes from "prop-types"; 
+// import PropTypes from "prop-types";
 
 function Boton({
   text,
@@ -80,14 +80,14 @@ function Boton({
   );
 }
 
-Boton.propTypes = {
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  type: PropTypes.string,
-  className: PropTypes.string,
-  dataAccount: PropTypes.string,
-  formId: PropTypes.string.isRequired,
-  onClear: PropTypes.func,
-};
+// Boton.propTypes = {
+//   text: PropTypes.string.isRequired,
+//   onClick: PropTypes.func,
+//   type: PropTypes.string,
+//   className: PropTypes.string,
+//   dataAccount: PropTypes.string,
+//   formId: PropTypes.string.isRequired,
+//   onClear: PropTypes.func,
+// };
 
 export default Boton;

@@ -1,7 +1,7 @@
 import React from "react";
 import Boton from "../Reutilizables/Boton";
 import InputField from "../Reutilizables/InputField";
-import reut from "../../modules/Reut.module.css";
+import reut from "../../modules/Prestamos.module.css";
 
 function Prestamos() {
   return (
@@ -16,6 +16,7 @@ function Prestamos() {
 
       <form id="formId" className={reut.formContainer}>
         <InputField
+          className={reut.inputField}
           label="Ingrese el monto en pesos del préstamo que desea realizar:"
           htmlFor="monto"
           type="number"
@@ -25,6 +26,7 @@ function Prestamos() {
           required
         />
         <InputField
+          className={reut.inputField}
           htmlFor="periodo"
           label="Ingrese el periodo de tiempo en meses en el cual abonará el
             préstamo:"
@@ -44,19 +46,23 @@ function Prestamos() {
           <Boton type="button" text="Limpiar" action="clear" />
         </div>
         <InputField
+          className={reut.inputFieldDisabled}
           htmlFor="resultado"
           label="Valor calculado de los pagos mensuales a realizar:"
           type="number"
           id="resultado"
           name="resultado"
+          placeholder='Precione "Calcular" para ver el resultado.'
           disabled
         />
         <InputField
+          className={reut.inputFieldDisabled}
           htmlFor="acumulado"
           label="Valor total acumulado en el periodo indicado:"
           type="number"
           id="acumulado"
           name="acumulado"
+          placeholder='Precione "Calcular" para ver el resultado.'
           disabled
         />
       </form>
