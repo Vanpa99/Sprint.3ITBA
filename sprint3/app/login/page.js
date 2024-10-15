@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import Boton from "../reutilizables/Boton";
 import InputField from "../Reutilizables/InputField.jsx";
-import reut from "../modules/Reut.module.css";
+import reut from "../../modules/Reut.module.css";
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -30,7 +30,7 @@ function Login({ onLogin }) {
     const storedAuth = localStorage.getItem("isAuthenticated");
     if (storedAuth === "true") {
       setIsAuthenticated(true);
-// eliminé onlogin();
+      // eliminé onlogin();
     }
   }, [onLogin]);
 
@@ -41,8 +41,9 @@ function Login({ onLogin }) {
     );
     if (userExists) {
       setIsAuthenticated(true);
+      window.location.href = "/Inicio";
       localStorage.setItem("isAuthenticated", "true"); // Guardar la sesión en localStorage
-       // Eliminé Onlogin();
+      // Eliminé Onlogin();
     } else {
       setErrorMessage("Nombre de usuario o contraseña incorrectos");
     }

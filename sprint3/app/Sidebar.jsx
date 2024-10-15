@@ -7,7 +7,7 @@ function Sidebar() {
       <nav>
         <ul>
           <li>
-            <Link href="/">Inicio</Link>
+            <Link href="/Inicio">Inicio</Link>
           </li>
           <li>
             <Link href="/cuentas">Cuentas</Link>

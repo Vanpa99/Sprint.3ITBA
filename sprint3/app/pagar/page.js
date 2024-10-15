@@ -12,6 +12,7 @@ function Pagar() {
 
   // Handler para el envío del formulario
   const handleSubmit = (e) => {
+    //PASAR A BOTÓN 👳‍♀️🎇
     e.preventDefault();
     let mensajeAlerta = "";
 

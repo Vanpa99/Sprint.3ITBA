@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function Boton({
   text,
@@ -44,8 +44,18 @@ function Boton({
     }
   };
 
+  // Función handleLogout que elimina la sesión de localStorage y redirige al login
+  const handleLogout = () => {
+    // Eliminar la autenticación de localStorage
+    localStorage.removeItem("isAuthenticated");
+
+    // Redirigir a la página de inicio de sesión
+    window.location.href = "/login"; // Redirige a la página de Login
+  };
+
   const handleClick = (e) => {
     if (onClick) {
+      console.log("Button clicked");
       onClick(e); // Si se ha proporcionado una función onClick, se llama a ella.
     }
     switch (action) {
@@ -54,6 +64,9 @@ function Boton({
         break;
       case "submit":
         handleSubmit(); // Si la acción es enviar, envía el formulario.
+        break;
+      case "logout":
+        handleLogout(); // Si la acción es cerrar sesión, ejecuta handleLogout.
         break;
       case "calcular":
         const monto = document.getElementById("monto").value;
@@ -80,14 +93,14 @@ function Boton({
   );
 }
 
-// Boton.propTypes = {
-//   text: PropTypes.string.isRequired,
-//   onClick: PropTypes.func,
-//   type: PropTypes.string,
-//   className: PropTypes.string,
-//   dataAccount: PropTypes.string,
-//   formId: PropTypes.string.isRequired,
-//   onClear: PropTypes.func,
-// };
+Boton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  dataAccount: PropTypes.string,
+  formId: PropTypes.string,
+  onClear: PropTypes.func,
+};
 
 export default Boton;

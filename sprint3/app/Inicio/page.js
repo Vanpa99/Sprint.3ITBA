@@ -1,5 +1,5 @@
-import reut from "../modules/Reut.module.css";
-import Login from "./login/page";
+import { Moneda } from "../reutilizables/Api";
+import reut from "../../modules/Reut.module.css";
 
 function Inicio() {
   return (
@@ -14,7 +14,7 @@ function Inicio() {
           </p>
         </section>
       </div>
-      <Login />
+      <Moneda />
     </section>
   );
 }
