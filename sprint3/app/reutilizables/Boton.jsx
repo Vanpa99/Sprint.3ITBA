@@ -50,7 +50,7 @@ function Boton({
     localStorage.removeItem("isAuthenticated");
 
     // Redirigir a la página de inicio de sesión
-    window.location.href = "/login"; // Redirige a la página de Login
+    window.location.href = "/"; // Redirige a la página de Login
   };
 
   const handleClick = (e) => {
