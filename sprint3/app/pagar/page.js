@@ -5,37 +5,34 @@ import Selector from "../Reutilizables/Selector";
 import InputField from "../reutilizables/InputField";
 import { opcionesAccion } from "../Reutilizables/Selector";
 import pagar from "../../modules/Pagar.module.css";
+import { useRouter } from "next/navigation"; // Importar useRouter
 
 function Pagar() {
   const [accion, setAccion] = useState("transferencia");
-  const [mensaje, setMensaje] = useState("");
+  const [codigoPago, setCodigoPago] = useState("");
+  const router = useRouter(); // Inicializar useRouter
 
-  // Handler para el envío del formulario
   const handleSubmit = (e) => {
-    //PASAR A BOTÓN 👳‍♀️🎇
     e.preventDefault();
-    let mensajeAlerta = "";
-
-    if (accion === "transferencia") {
-      mensajeAlerta =
+    if (accion === "pago") {
+      // Redirigir a la página de detalles de la factura
+      router.push(`/facturas/${codigoPago}`);
+    } else {
+      // Lógica para transferencia
+      const mensajeAlerta =
         "Transferencia realizada. Le enviaremos por correo el comprobante";
-    } else if (accion === "pago") {
-      mensajeAlerta = "Pago de servicio realizado. ¡Gracias por elegirnos!";
+      window.alert(mensajeAlerta);
     }
-
-    setMensaje(mensajeAlerta);
-    window.alert(mensajeAlerta);
   };
 
   return (
     <div className={pagar.contPrincipal}>
       <h2 className={pagar.sectionTitle}>Métodos de Pago</h2>
       <p className={pagar.infoForm}>
-        Para realizar una transferencia o pagar con codigo, complete los
+        Para realizar una transferencia o pagar con código, complete los
         siguientes datos:
       </p>
       <form onSubmit={handleSubmit} id="formId" className={pagar.formContainer}>
-        {/*P U L I R*/}
         <Selector
           className={pagar.selectOp}
           name="accion"
@@ -70,17 +67,18 @@ function Pagar() {
             <InputField
               className={pagar.inputField}
               label="Ingrese el código de pago:"
-              type="number"
+              type="text" // Cambiado a text para códigos alfanuméricos
               name="codigo-pago"
               id="codigo-pago"
               placeholder="Ingresa el código de pago"
+              value={codigoPago}
+              onChange={(e) => setCodigoPago(e.target.value)} // Capturar el código de pago
               required
             />
           </article>
         )}
         <div className={pagar.btnContainer}>
           <Boton type="submit" text="Enviar" action="submit" />
-          {/* P U L I R */}
           <Boton type="button" text="Limpiar" action="clear" />
         </div>
       </form>
