@@ -1,0 +1,12 @@
+----SI O SI----
+.ARREGLAR LOGIN
+
+
+
+
+----IDEALES *NO* NECESARIOS----
+
+ **EN CUENTAS**
+.Que "Movimientos recientes" tenga coherencia con las transferencias que hacemos y no este simplemente hardcodeado (preferi comentarlo por ahora).
+.Habria que ver como hacer que se guarde cada vez que hacemos una transferencia.
+. Agregar un metodo de transferencia externa para empezar con las cuentas en 0 y a medida que se vaya transfiriendo que se vaya modificando el dinero en cuenta

@@ -1,0 +1,27 @@
+-----------------------CONSGINA SPRINT 3------------------------    
+    1. Optimizar los indicadores de Web Vitals, prestando especial atención a los siguientes aspectos:❗❗❗
+a. Mejorar el tiempo de carga inicial asegurándote de que el tamaño de los recursos sea óptimo y que los archivos JavaScript y CSS se minimicen y se entreguen de manera eficiente. ❗❗❗
+b. Optimizar el tiempo de interactividadasegurándote de que el JavaScript se ejecute de manera eficiente y que los eventos de interacción del usuario se manejen de forma receptiva. ❗❗❗
+c. Asegurarte de que la experiencia de desplazamiento (scrolling) sea suave y fluida, evitando bloqueos en la interfaz de usuario.❗❗❗
+
+    2. Implementar optimizaciones de SEO en tu aplicación, incluyendo:❗❗❗
+a. Uso adecuado de etiquetas de encabezado<h1> - <h6> para estructurar el contenido.✅
+b. Generación de metaetiquetas de título y descripción únicas para cada página.❗❗❗
+c. Uso de URLs amigables para SEO y gestiónadecuada de enlaces internos y externos.❗❗❗
+d. Implementación de etiquetas de imagen con atributos alt y title adecuados.✅
+e. Asegurarte de que tu aplicación cumpla con las mejores prácticas de accesibilidad web, como proporcionar alternativas textuales para contenido no textual y utilizar una estructura semántica adecuada.✅
+f. Utilizar las herramientas de monitoreo de rendimiento y SEO, como Lighthouse y Google Search Console, para evaluar y mejorar continuamente el rendimiento y la visibilidad de tu aplicación.❗❗❗
+
+    3. Agregar funcionalidades:❗❗❗
+a. Transferencias entre cuentas bancarias:✅
+i.✅ Generación de rutas estáticas: Podés utilizar la generación de rutas estáticas para mostrar una lista de cuentas bancarias disponibles en una página. Esto permitiría una carga rápida y eficiente de las páginas de detalles de cada cuenta.
+ii.✅ Generación de rutas dinámicas: Podrías utilizar la generación de rutas dinámicas para procesar y realizar la transferencia entre cuentas en tiempo real, obteneniendo los datos necesarios para realizar la transferencia y mostrar los resultados actualizados en la página.
+b. Pagos de facturas:❗❗❗
+i. Generación de rutas dinámicas: Puedes utilizar la generación de rutas dinámicas para crear una página de detalle para cada factura, obteniendo los detalles de la factura y mostrarlos en la página. Esto permitiría mostrar información en tiempo real sobre la factura y realizar el pago correspondiente.❗❗❗
+c. Administración de tarjetas de crédito:❗❗❗
+i. Generación de rutas estáticas: Podés utilizar la generación de rutas estáticas para mostrar una lista de tarjetas de crédito disponibles en una página, generando páginas estáticas para cada tarjeta. Esto permitiría una carga rápida y eficiente de las páginas de detalles de cada tarjeta.❗❗❗
+ii. Generación de rutas dinámicas: Podrías utilizar la generación de rutas dinámicas para procesar acciones relacionadas con las tarjetas de crédito, como realizar pagos, solicitar un aumento de límite, etc., realizando las acciones en tiempo real y mostrar los resultados actualizados en la página.❗❗❗
+
+    4. Implementar un formulario de contacto con el banco, permitiendo a los usuarios enviar consultas o solicitar soporte. ✅
+
+    5. Optimizar la aplicación para una carga diferida de recursos, como imágenes o contenido adicional. ❗❗❗
