@@ -6,6 +6,9 @@ import Boton from "../Reutilizables/Boton";
 import styles from "../../modules/Cuentas.module.css";
 import reut from "../../modules/Reut.module.css";
 import { opcionesMoneda } from "../Reutilizables/Selector";
+import BotonTransferencia, {
+  realizarTransferencia,
+} from "../reutilizables/botones/BotonTransferir";
 
 function Cuentas() {
   const [monedaSeleccionada, setMonedaSeleccionada] = useState("ARS"); // Moneda por defecto
@@ -16,6 +19,8 @@ function Cuentas() {
   const [cuentaOrigen, setCuentaOrigen] = useState("");
   const [cuentaDestino, setCuentaDestino] = useState("");
   const [montoTransferir, setMontoTransferir] = useState("");
+
+  //- - - - - - - -
 
   useEffect(() => {
     const modal = document.getElementById("accountModal");
@@ -64,38 +69,7 @@ function Cuentas() {
       });
     };
   }, []);
-
-  // Realizar transferencia
-  const realizarTransferencia = () => {
-    const cuentaSeleccionada = cuentas.find((c) => c.numero === cuentaDestino);
-    const cuentaOrigenSeleccionada = cuentas.find(
-      (c) => c.numero === cuentaOrigen
-    );
-    // Verifica que la cuenta de origen no sea la misma que la cuenta de destino
-    if (cuentaSeleccionada && cuentaOrigenSeleccionada && montoTransferir > 0) {
-      if (cuentaOrigen !== cuentaDestino) {
-        // Verifica que hay suficiente saldo en la cuenta de origen
-        if (cuentaOrigenSeleccionada.saldo >= montoTransferir) {
-          // Realizar transferencia
-          cuentaOrigenSeleccionada.saldo -= montoTransferir;
-          cuentaSeleccionada.saldo += montoTransferir;
-          alert(
-            `Transferencia de $${montoTransferir} de ${cuentaOrigenSeleccionada.tipo} a ${cuentaSeleccionada.tipo} realizada con éxito.`
-          );
-          // Resetear campos
-          setCuentaOrigen("");
-          setCuentaDestino("");
-          setMontoTransferir("");
-        } else {
-          alert("Saldo insuficiente para realizar la transferencia.");
-        }
-      } else {
-        alert("No puedes transferir a la misma cuenta.");
-      }
-    } else {
-      alert("Seleccione cuentas válidas y un monto a transferir.");
-    }
-  };
+  //- - - - - -  - -
 
   return (
     <div className={reut.contPrincipal}>
@@ -201,7 +175,20 @@ function Cuentas() {
           value={montoTransferir}
           onChange={(e) => setMontoTransferir(Number(e.target.value))}
         />
-        <Boton text="Transferir" onClick={realizarTransferencia} />
+        {/* <Boton text="Transferir" onClick={realizarTransferencia} /> */}
+        <BotonTransferencia
+          text="Transferir"
+          cuentaOrigen={cuentaOrigen}
+          cuentaDestino={cuentaDestino}
+          montoTransferir={montoTransferir}
+          cuentas={cuentas}
+          onTransferenciaExitosa={(nuevasCuentas) => {
+            setCuentas(nuevasCuentas);
+            setCuentaOrigen("");
+            setCuentaDestino("");
+            setMontoTransferir("");
+          }}
+        />
       </section>
     </div>
   );
