@@ -6,12 +6,10 @@ import Boton from "../Reutilizables/Boton";
 import styles from "../../modules/Cuentas.module.css";
 import reut from "../../modules/Reut.module.css";
 import { opcionesMoneda } from "../Reutilizables/Selector";
-import BotonTransferencia, {
-  realizarTransferencia,
-} from "../reutilizables/botones/BotonTransferir";
+import BotonTransferencia from "../reutilizables/botones/BotonTransferir";
 
 function Cuentas() {
-  const [monedaSeleccionada, setMonedaSeleccionada] = useState("ARS"); // Moneda por defecto
+  const [monedaSeleccionada, setMonedaSeleccionada] = useState("ARS");
   const [cuentas, setCuentas] = useState([
     { tipo: "Cuenta Corriente", numero: "123-456789-00", saldo: 50000 },
     { tipo: "Caja de Ahorro", numero: "987-654321-00", saldo: 15300 },
@@ -146,6 +144,7 @@ function Cuentas() {
         <div>Selecciona la cuenta de origen</div>
         <select
           title="select"
+          value={cuentaOrigen} // Añadido value para mantener la selección
           onChange={(e) => setCuentaOrigen(e.target.value)}
         >
           <option value="">Seleccione su cuenta</option>
@@ -159,6 +158,7 @@ function Cuentas() {
         <div>Selecciona la cuenta de destino</div>
         <select
           title="select"
+          value={cuentaDestino} // Añadido value para mantener la selección
           onChange={(e) => setCuentaDestino(e.target.value)}
         >
           <option value="">Seleccione su cuenta</option>
@@ -175,7 +175,6 @@ function Cuentas() {
           value={montoTransferir}
           onChange={(e) => setMontoTransferir(Number(e.target.value))}
         />
-        {/* <Boton text="Transferir" onClick={realizarTransferencia} /> */}
         <BotonTransferencia
           text="Transferir"
           cuentaOrigen={cuentaOrigen}
@@ -184,9 +183,9 @@ function Cuentas() {
           cuentas={cuentas}
           onTransferenciaExitosa={(nuevasCuentas) => {
             setCuentas(nuevasCuentas);
-            setCuentaOrigen("");
-            setCuentaDestino("");
+            // Solo limpiamos el monto, manteniendo las cuentas seleccionadas
             setMontoTransferir("");
+            // No limpiamos setCuentaOrigen ni setCuentaDestino
           }}
         />
       </section>
