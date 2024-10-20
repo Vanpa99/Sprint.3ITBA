@@ -1,5 +1,7 @@
-import { Moneda } from "../reutilizables/Api";
+// app/Inicio/page.js
+"use client";
 import reut from "../../modules/Reut.module.css";
+import { Moneda } from "../reutilizables/Api";
 
 function Inicio() {
   return (

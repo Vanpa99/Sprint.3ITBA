@@ -1,49 +1,24 @@
+// app/login/page.js
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Boton from "../reutilizables/Boton";
 import InputField from "../Reutilizables/InputField.jsx";
 import reut from "../../modules/Reut.module.css";
+import { useAuth } from "../contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
-function Login({ onLogin }) {
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Verificar si ya hay una sesión activa en localStorage cuando el componente se monta
-  useEffect(() => {
-    const storedAuth = localStorage.getItem("isAuthenticated");
-    if (storedAuth === "true") {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  // Lista de usuarios
-  const users = [
-    { username: "ITPOWERBANK", password: "2024" },
-    { username: "USUARIO1", password: "1234" },
-  ];
-
-  // Verificar si ya hay una sesión activa en localStorage cuando el componente se monta
-  useEffect(() => {
-    const storedAuth = localStorage.getItem("isAuthenticated");
-    if (storedAuth === "true") {
-      setIsAuthenticated(true);
-      // eliminé onlogin();
-    }
-  }, [onLogin]);
+  const { login } = useAuth();
+  const router = useRouter();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const userExists = users.some(
-      (user) => user.username === username && user.password === password
-    );
-    if (userExists) {
-      setIsAuthenticated(true);
-      window.location.href = "/Inicio";
-      localStorage.setItem("isAuthenticated", "true"); // Guardar la sesión en localStorage
-      // Eliminé Onlogin();
+    const success = login(username, password);
+    if (success) {
+      router.push("/Inicio");
     } else {
       setErrorMessage("Nombre de usuario o contraseña incorrectos");
     }
@@ -78,7 +53,9 @@ function Login({ onLogin }) {
             text="Limpiar"
             action="clear"
             onClick={() => {
-              setUsername(""), setPassword(""), setErrorMessage("");
+              setUsername("");
+              setPassword("");
+              setErrorMessage("");
             }}
           />
         </div>
