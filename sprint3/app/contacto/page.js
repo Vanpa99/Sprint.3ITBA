@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Boton from "../Reutilizables/Boton";
-import InputField from "../Reutilizables/InputField";
+import Boton from "../reutilizables/Boton";
+import InputField from "../reutilizables/InputField";
 import contacto from "../../modules/Contacto.module.css";
 
 const FormularioContacto = () => {

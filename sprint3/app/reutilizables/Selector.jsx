@@ -11,11 +11,28 @@ export const opcionesAccion = [
   { value: "pago", label: "Pago" },
 ];
 
+// function Selector({ name, options, label, onChange, value, className }) {
+//   return (
+//     <div className={className}>
+//       <label htmlFor={name}>{label}</label>
+//       <select id={name} name={name} onChange={onChange} value={value}>
+//         {options.map((option) => (
+//           <option key={option.value} value={option.value}>
+//             {option.label}
+//           </option>
+//         ))}
+//       </select>
+//     </div>
+//   );
+// }
+
+// export default Selector;
 function Selector({ name, options, label, onChange, value, className }) {
   return (
     <div className={className}>
       <label htmlFor={name}>{label}</label>
       <select id={name} name={name} onChange={onChange} value={value}>
+        <option value="">Seleccione su cuenta</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

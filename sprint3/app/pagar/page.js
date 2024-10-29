@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Boton from "../Reutilizables/Boton";
-import Selector from "../Reutilizables/Selector";
+import Boton from "../reutilizables/Boton";
+import Selector from "../reutilizables/Selector";
 import InputField from "../reutilizables/InputField";
-import { opcionesAccion } from "../Reutilizables/Selector";
+import { opcionesAccion } from "../reutilizables/Selector";
 import pagar from "../../modules/Pagar.module.css";
 import { useRouter } from "next/navigation"; // Importar useRouter
 

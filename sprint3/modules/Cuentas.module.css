@@ -14,6 +14,14 @@
   text-align: center;
   margin-top: -1rem;
 }
+.inputField {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid var(--difuminado);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: field;
+}
 
 /* TABLA */
 .accountsTable {
