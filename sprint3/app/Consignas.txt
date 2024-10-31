@@ -7,7 +7,7 @@ c. Asegurarte de que la experiencia de desplazamiento (scrolling) sea suave y fl
     2. Implementar optimizaciones de SEO en tu aplicación, incluyendo:❗❗❗
 a. Uso adecuado de etiquetas de encabezado<h1> - <h6> para estructurar el contenido.✅
 b. Generación de metaetiquetas de título y descripción únicas para cada página.❗❗❗
-c. Uso de URLs amigables para SEO y gestiónadecuada de enlaces internos y externos.❗❗❗
+c. Uso de URLs amigables para SEO y gestiónadecuada de enlaces internos y externos.✅
 d. Implementación de etiquetas de imagen con atributos alt y title adecuados.✅
 e. Asegurarte de que tu aplicación cumpla con las mejores prácticas de accesibilidad web, como proporcionar alternativas textuales para contenido no textual y utilizar una estructura semántica adecuada.✅
 f. Utilizar las herramientas de monitoreo de rendimiento y SEO, como Lighthouse y Google Search Console, para evaluar y mejorar continuamente el rendimiento y la visibilidad de tu aplicación.✅
@@ -24,4 +24,4 @@ ii. Generación de rutas dinámicas: Podrías utilizar la generación de rutas d
 
     4. Implementar un formulario de contacto con el banco, permitiendo a los usuarios enviar consultas o solicitar soporte. ✅
 
-    5. Optimizar la aplicación para una carga diferida de recursos, como imágenes o contenido adicional. ❗❗❗
+    5. Optimizar la aplicación para una carga diferida de recursos, como imágenes o contenido adicional. ✅

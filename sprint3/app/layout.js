@@ -17,6 +17,13 @@ function AuthenticatedLayout({ children }) {
 
   return (
     <>
+      <Head>
+        <title>Inicio - ITPOWERBANK</title>
+        <meta
+          name="description"
+          content="Bienvenido a nuestra aplicación de ejemplo en Next.js."
+        />
+      </Head>
       <Header />
       <div className={styles.contenedor}>
         <Sidebar />
