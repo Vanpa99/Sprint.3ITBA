@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import styles from "../modules/App.module.css";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Login from "./login/page";
+import SEO from "./components/SEO";
 
 function AuthenticatedLayout({ children }) {
   const { isAuthenticated } = useAuth();
@@ -17,13 +18,7 @@ function AuthenticatedLayout({ children }) {
 
   return (
     <>
-      <Head>
-        <title>Inicio - ITPOWERBANK</title>
-        <meta
-          name="description"
-          content="Bienvenido a nuestra aplicación de ejemplo en Next.js."
-        />
-      </Head>
+      <SEO />
       <Header />
       <div className={styles.contenedor}>
         <Sidebar />
