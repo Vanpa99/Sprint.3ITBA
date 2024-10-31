@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Saldo } from "../reutilizables/Api";
-import Selector from "../Reutilizables/Selector";
-import Boton from "../Reutilizables/Boton";
+import Selector from "../reutilizables/Selector";
+import Boton from "../reutilizables/Boton";
 import styles from "../../modules/Cuentas.module.css";
 import reut from "../../modules/Reut.module.css";
-import { opcionesMoneda } from "../Reutilizables/Selector";
+import { opcionesMoneda } from "../reutilizables/Selector";
 import BotonTransferencia from "../reutilizables/botones/BotonTransferir";
 
 function Cuentas() {

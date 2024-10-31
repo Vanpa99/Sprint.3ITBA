@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -104,3 +104,113 @@ Boton.propTypes = {
 };
 
 export default Boton;
+ */
+
+// 30/10/24 22:27🔥 
+ "use client";
+import React from "react";
+import PropTypes from "prop-types";
+
+function Boton({
+  text,
+  onClick,
+  type = "button",
+  className = "",
+  dataAccount,
+  action,
+  formId,
+  onClear,
+}) {
+  const handleClear = () => {
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((input) => {
+      input.value = ""; // Limpia el valor de cada input
+    });
+    if (onClear) {
+      onClear();
+    }
+  };
+
+  const handleSubmit = (e) => {
+    console.log("evento:", e);
+    e.preventDefault();
+    const form = document.getElementById(formId); // Busca el formulario por ID
+    if (form) {
+      const monto = document.getElementById("monto").value;
+      const periodo = document.getElementById("periodo").value;
+      const tasa = 0.02;
+
+      const numerador = tasa * monto;
+      const denominador = 1 - (1 + tasa) ** -periodo;
+
+      const resul = numerador / denominador;
+      const resultado = resul.toFixed(2);
+
+      const acum = resultado * periodo;
+      const acumulado = acum.toFixed(2);
+
+      document.getElementById("resultado").value = resultado;
+      document.getElementById("acumulado").value = acumulado;
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    window.location.href = "/"; // Redirige a la página de Login
+  };
+
+  const handleClick = (e) => {
+    if (onClick) {
+      console.log("Button clicked");
+      onClick(e);
+    }
+    
+    switch (action) {
+      case "clear":
+        handleClear();
+        break;
+      case "submit":
+        handleSubmit(e); // Asegúrate de pasar el evento
+        break;
+      case "logout":
+        handleLogout();
+        break;
+      case "calcular":
+        const monto = document.getElementById("monto").value;
+        const periodo = document.getElementById("periodo").value;
+        if (monto === "" || periodo === "") {
+          handleSubmit(e); // Asegúrate de pasar el evento
+        } else {
+          handleSubmit(e); // Asegúrate de pasar el evento
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  return (
+    <button
+      type={type}
+      onClick={handleClick}
+      className={className}
+      data-account={dataAccount} // Cambiado a data-account
+      autoComplete="off"
+    >
+      {text}
+    </button>
+  );
+}
+
+Boton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  dataAccount: PropTypes.string,
+  formId: PropTypes.string,
+  onClear: PropTypes.func,
+};
+
+export default Boton; 
+

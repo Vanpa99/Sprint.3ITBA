@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Boton from "../reutilizables/Boton";
-import InputField from "../Reutilizables/InputField.jsx";
+import InputField from "../reutilizables/InputField.jsx";
 import reut from "../../modules/Reut.module.css";
 
 function Login({ onLogin }) {

@@ -3,7 +3,7 @@ import styles from "../modules/Header.module.css";
 import React from "react";
 import PropTypes from "prop-types";
 import Logo from "./assets/LogoITPowerBank.png";
-import Boton from "./Reutilizables/Boton";
+import Boton from "./reutilizables/Boton";
 import Image from "next/image";
 
 function Header({ handleLogout }) {

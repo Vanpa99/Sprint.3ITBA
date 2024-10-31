@@ -1,6 +1,6 @@
 import React from "react";
-import Boton from "../Reutilizables/Boton";
-import InputField from "../Reutilizables/InputField";
+import Boton from "../reutilizables/Boton";
+import InputField from "../reutilizables/InputField";
 import reut from "../../modules/Prestamos.module.css";
 
 function Prestamos() {
