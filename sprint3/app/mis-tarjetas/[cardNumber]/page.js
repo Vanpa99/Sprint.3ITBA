@@ -5,6 +5,7 @@ import CreditCard from "../../components/CreditCard/CreditCard";
 import SEO from "@/app/components/SEO";
 import cardNumber from "./cardNumber.module.css";
 import InputField from "@/app/reutilizables/InputField";
+import Boton from "@/app/reutilizables/Boton";
 
 export default function CardDetailPage({ params }) {
   const MINIMUM_LIMIT = 2500000;
@@ -89,50 +90,27 @@ export default function CardDetailPage({ params }) {
             className={cardNumber.formContainer}
           >
             <div>
-              {/* <InputField
+              <InputField
                 label="Nuevo límite solicitado:"
                 type="number"
                 value={requestedAmount}
                 onChange={handleAmountChange}
-                min={MINIMUM_LIMIT}
-                className={cardNumber.inputField}
-                placeholder={`Mínimo $${MINIMUM_LIMIT.toLocaleString()}`}
-                required
-              /> */}
-              <label className="block text-sm font-medium text-gray-700">
-                Nuevo límite solicitado:
-              </label>
-              <input
-                type="number"
-                value={requestedAmount}
-                onChange={handleAmountChange}
-                min={MINIMUM_LIMIT}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2"
                 placeholder={`Mínimo $${MINIMUM_LIMIT.toLocaleString()}`}
                 required
               />
-              {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+              {error && <p>{error}</p>}
             </div>
-
-            <button
+            <Boton
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              text={
+                status === "processing" ? "Procesando..." : "Solicitar Aumento"
+              }
               disabled={status === "processing"}
-            >
-              {status === "processing" ? "Procesando..." : "Solicitar Aumento"}
-            </button>
+            />
           </form>
 
           {status && status !== "processing" && (
-            <div
-              className={`mt-4 p-4 rounded-md ${
-                status === "approved"
-                  ? "bg-green-100 text-green-800"
-                  : status === "rejected"
-                  ? "bg-red-100 text-red-800"
-                  : "bg-yellow-100 text-yellow-800"
-              }`}
-            >
+            <div>
               {status === "approved" &&
                 "¡Su solicitud ha sido aprobada! El nuevo límite ya está disponible."}
               {status === "rejected" &&
