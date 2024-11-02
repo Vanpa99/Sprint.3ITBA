@@ -6,6 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import styles from "../modules/App.module.css";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import Head from "next/head";
 import Login from "./login/page";
 import SEO from "./components/SEO";
 
