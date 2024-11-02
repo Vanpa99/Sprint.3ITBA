@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./TransferForm.module.css";
+import SEO from "../components/SEO";
 
 const TransferenciasPage = () => {
   const [cuentaOrigen, setCuentaOrigen] = useState("Caja de Ahorro");

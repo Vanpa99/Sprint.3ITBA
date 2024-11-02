@@ -1,16 +1,16 @@
 // app/Inicio/page.js
 "use client";
 import reut from "../../modules/Reut.module.css";
+import SEO from "../components/SEO";
 import { Moneda } from "../reutilizables/Api";
-
 
 function Inicio() {
   return (
     <>
-     {/*  <SEO
+      <SEO
         title="Inicio - ITPowerBank"
         description="Bienvenido a ITPowerBank, su aliado financiero de confianza."
-      /> */}
+      />
       <section>
         <div className={reut.contPrincipal}>
           <section className={reut.inicioDescripcion}>

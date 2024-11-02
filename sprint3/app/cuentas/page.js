@@ -8,6 +8,7 @@ import reut from "../../modules/Reut.module.css";
 import { opcionesMoneda } from "../reutilizables/Selector";
 import BotonTransferencia from "../reutilizables/botones/BotonTransferir";
 import InputField from "../reutilizables/InputField";
+import SEO from "../components/SEO";
 
 function Cuentas() {
   const [monedaSeleccionada, setMonedaSeleccionada] = useState("ARS"); // Moneda por defecto
@@ -32,7 +33,7 @@ function Cuentas() {
 
     document.querySelectorAll(".details-btn").forEach((button) => {
       button.addEventListener("click", function () {
-        const accountNumber = this.getAttribute("dataAccount");
+        const accountNumber = this.getAttribute("dataaccount");
         openModal(accountNumber);
       });
     });
@@ -72,109 +73,117 @@ function Cuentas() {
   };
 
   return (
-    <div className={reut.contPrincipal}>
-      <h2 className={reut.sectionTitle}>Mis Cuentas</h2>
-      <p className={reut.subtitle}>
-        Aquí puedes ver y gestionar todas tus cuentas bancarias:
-      </p>
-      <table className={styles.accountsTable}>
-        <thead>
-          <tr>
-            <th>Tipo de Cuenta</th>
-            <th>Número de Cuenta</th>
-            <th>
-              <Selector
-                name="moneda"
-                label="Saldo"
-                options={opcionesMoneda}
-                onChange={(e) => setMonedaSeleccionada(e.target.value)}
-              />
-            </th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cuentas.map((cuenta, index) => (
-            <tr key={index}>
-              <td>{cuenta.tipo}</td>
-              <td>{cuenta.numero}</td>
-              <td>
-                <Saldo
-                  saldo={cuenta.saldo}
-                  fromCurrency="ARS"
-                  toCurrency={monedaSeleccionada}
+    <>
+      <SEO
+        title="Cuentas - ITPowerBank"
+        description="Gestiona todas tus cuentas bancarias en un solo lugar."
+      />
+      <div className={reut.contPrincipal}>
+        <h2 className={reut.sectionTitle}>Mis Cuentas</h2>
+        <p className={reut.subtitle}>
+          Aquí puedes ver y gestionar todas tus cuentas bancarias:
+        </p>
+        <table className={styles.accountsTable}>
+          <thead>
+            <tr>
+              <th>Tipo de Cuenta</th>
+              <th>Número de Cuenta</th>
+              <th>
+                <Selector
+                  name="moneda"
+                  label="Saldo"
+                  options={opcionesMoneda}
+                  onChange={(e) => setMonedaSeleccionada(e.target.value)}
                 />
-              </td>
-              <td>
-                <Boton
-                  text="Ver Detalles"
-                  className="details-btn"
-                  dataAccount={cuenta.numero}
-                />
-              </td>
+              </th>
+              <th>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      {/* Modal */}
-      <div id="accountModal" className={styles.modal}>
-        <div className={styles.modalContent}>
-          <div className={styles.headerModal}>
-            <h3>Detalles de la Cuenta</h3>
-            <span className={`close ${styles.close}`}>&times;</span>
+          </thead>
+          <tbody>
+            {cuentas.map((cuenta, index) => (
+              <tr key={index}>
+                <td>{cuenta.tipo}</td>
+                <td>{cuenta.numero}</td>
+                <td>
+                  <Saldo
+                    saldo={cuenta.saldo}
+                    fromCurrency="ARS"
+                    toCurrency={monedaSeleccionada}
+                  />
+                </td>
+                <td>
+                  <Boton
+                    text="Ver Detalles"
+                    className="details-btn"
+                    dataaccount={cuenta.numero}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {/* Modal */}
+        <div id="accountModal" className={styles.modal}>
+          <div className={styles.modalContent}>
+            <div className={styles.headerModal}>
+              <h3>Detalles de la Cuenta</h3>
+              <span className={`close ${styles.close}`}>&times;</span>
+            </div>
+
+            <p id="modalAccountNumber"></p>
+            <p>Información adicional sobre la cuenta seleccionada.</p>
           </div>
-
-          <p id="modalAccountNumber"></p>
-          <p>Información adicional sobre la cuenta seleccionada.</p>
         </div>
+
+        {/* Transferencias de cuentas */}
+        <section className={styles.contPrincipal}>
+          <h3 className={styles.sectionTitle}>Realizar Transferencia</h3>
+          <form className={styles.formContainer}>
+            <Selector
+              name="cuentaOrigen"
+              label="Selecciona la cuenta de origen"
+              options={cuentas.map((cuenta) => ({
+                value: cuenta.numero,
+                label: cuenta.tipo,
+              }))}
+              onChange={(e) => setCuentaOrigen(e.target.value)}
+              value={cuentaOrigen}
+              className={styles.selectOp}
+            />
+            <Selector
+              name="cuentaDestino"
+              label="Selecciona la cuenta de destino"
+              options={cuentas.map((cuenta) => ({
+                value: cuenta.numero,
+                label: cuenta.tipo,
+              }))}
+              onChange={(e) => setCuentaDestino(e.target.value)}
+              value={cuentaDestino}
+              className={styles.selectOp}
+            />
+
+            <InputField
+              className={reut.inputField}
+              type="number"
+              placeholder="Monto a transferir"
+              value={montoTransferir}
+              onChange={(e) => setMontoTransferir(Number(e.target.value))}
+            />
+            <BotonTransferencia
+              text="Transferir"
+              cuentaOrigen={cuentaOrigen}
+              cuentaDestino={cuentaDestino}
+              montoTransferir={montoTransferir}
+              cuentas={cuentas}
+              onTransferenciaExitosa={handleTransferenciaExitosa}
+            />
+            {mensajeTransferencia && (
+              <p className={styles.mensaje}>{mensajeTransferencia}</p>
+            )}
+          </form>
+        </section>
       </div>
-
-      {/* Transferencias de cuentas */}
-      <section className={reut.contPrincipal}>
-        <h3 className={reut.sectionTitle}>Realizar Transferencia</h3>
-        <Selector
-          name="cuentaOrigen"
-          label="Selecciona la cuenta de origen"
-          options={cuentas.map((cuenta) => ({
-            value: cuenta.numero,
-            label: cuenta.tipo,
-          }))}
-          onChange={(e) => setCuentaOrigen(e.target.value)}
-          value={cuentaOrigen}
-          className="mb-4"
-        />
-        <Selector
-          name="cuentaDestino"
-          label="Selecciona la cuenta de destino"
-          options={cuentas.map((cuenta) => ({
-            value: cuenta.numero,
-            label: cuenta.tipo,
-          }))}
-          onChange={(e) => setCuentaDestino(e.target.value)}
-          value={cuentaDestino}
-          className="mb-4"
-        />
-
-        <InputField
-          className={reut.inputField}
-          type="number"
-          placeholder="Monto a transferir"
-          value={montoTransferir}
-          onChange={(e) => setMontoTransferir(Number(e.target.value))}
-        />
-        <BotonTransferencia
-          text="Transferir"
-          cuentaOrigen={cuentaOrigen}
-          cuentaDestino={cuentaDestino}
-          montoTransferir={montoTransferir}
-          cuentas={cuentas}
-          onTransferenciaExitosa={handleTransferenciaExitosa}
-        />
-        {mensajeTransferencia && (
-          <p className={styles.mensaje}>{mensajeTransferencia}</p>
-        )}
-      </section>
-    </div>
+    </>
   );
 }
 

@@ -2,7 +2,7 @@
 "use client";
 import React, { useState } from "react";
 import Boton from "../reutilizables/Boton";
-import InputField from "../Reutilizables/InputField.jsx";
+import InputField from "../reutilizables/InputField.jsx";
 import reut from "../../modules/Reut.module.css";
 import { useAuth } from "../contexts/AuthContext";
 import { useRouter } from "next/navigation";
@@ -35,6 +35,7 @@ function Login() {
         <h2 className={reut.sectionTitle}>Iniciar Sesión</h2>
         <form onSubmit={handleLogin} autoComplete="off">
           <InputField
+            className={reut.inputField}
             label="Usuario:"
             type="text"
             value={username}
@@ -44,6 +45,7 @@ function Login() {
             autoComplete="off"
           />
           <InputField
+            className={reut.inputField}
             label="Contraseña:"
             type="password"
             value={password}
