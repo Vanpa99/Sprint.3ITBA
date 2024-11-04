@@ -114,7 +114,7 @@ export default function CardDetailPage({ params }) {
               {status === "approved" &&
                 "¡Su solicitud ha sido aprobada! El nuevo límite ya está disponible."}
               {status === "rejected" &&
-                "Lo sentimos, su solicitud no pudo ser aprobada en este momento."}
+                "Lo sentimos, su solicitud no pudo ser aprobada en este momento. Por favor intente nuevamente."}
               {status === "error" &&
                 "Ocurrió un error. Por favor intente nuevamente."}
             </div>
