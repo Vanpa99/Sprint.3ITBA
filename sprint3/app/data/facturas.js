@@ -1,6 +1,6 @@
 const facturas = [
   {
-    id: "1",
+    id: 1,
     monto: 100,
     fecha: "2024-10-01",
     descripcion: "Factura de servicios",
