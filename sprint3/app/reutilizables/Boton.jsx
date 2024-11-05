@@ -7,7 +7,7 @@ function Boton({
   onClick,
   type = "button",
   className = "",
-  dataAccount,
+  dataaccount,
   action,
   formId,
   onClear,
@@ -85,7 +85,7 @@ function Boton({
       type={type}
       onClick={handleClick}
       className={className}
-      dataAccount={dataAccount}
+      dataaccount={dataaccount}
       autoComplete="off"
     >
       {text}
@@ -98,7 +98,7 @@ Boton.propTypes = {
   onClick: PropTypes.func,
   type: PropTypes.string,
   className: PropTypes.string,
-  dataAccount: PropTypes.string,
+  dataaccount: PropTypes.string,
   formId: PropTypes.string,
   onClear: PropTypes.func,
 };

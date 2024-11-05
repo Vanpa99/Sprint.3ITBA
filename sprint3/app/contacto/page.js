@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Boton from "../reutilizables/Boton";
 import InputField from "../reutilizables/InputField";
 import contacto from "../../modules/Contacto.module.css";
+import SEO from "../components/SEO";
 
 const FormularioContacto = () => {
   const [nombre, setNombre] = useState("");
@@ -37,53 +38,59 @@ const FormularioContacto = () => {
   };
 
   return (
-    <div className={contacto.contPrincipal}>
-      <h2 className={contacto.sectionTitle}>Métodos de Pago</h2>
-      <p className={contacto.infoForm}>
-        Por favor, complete el formulario de contacto, para poder ser contactado
-        por uno de nuestros asesores.
-      </p>
+    <>
+      <SEO
+        title="Contacto - ITPowerBank"
+        description="Ponte en contacto con nosotros para cualquier consulta o asistencia."
+      />
+      <div className={contacto.contPrincipal}>
+        <h2 className={contacto.sectionTitle}>Métodos de Pago</h2>
+        <p className={contacto.infoForm}>
+          Por favor, complete el formulario de contacto, para poder ser
+          contactado por uno de nuestros asesores.
+        </p>
 
-      <form onSubmit={handleSubmit} className={contacto.formContainer}>
-        <InputField
-          className={contacto.inputField}
-          htmlFor="nombre"
-          label="Nombre:"
-          type="text"
-          name="nombre"
-          id="nombre"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          placeholder="Ingrese su nombre completo."
-          required
-        />
-        <InputField
-          className={contacto.inputField}
-          htmlFor="correo"
-          label="Correo Electrónico:"
-          type="email"
-          name="email"
-          id="correo"
-          value={correo}
-          onChange={(e) => setCorreo(e.target.value)}
-          placeholder="Ingrese su Email."
-          required
-        />
-        <InputField
-          className={contacto.inputField}
-          htmlFor="mensaje"
-          label="Mensaje:"
-          type="textarea"
-          name="mensaje"
-          id="mensaje"
-          value={mensaje}
-          onChange={(e) => setMensaje(e.target.value)}
-          placeholder="Deje su mensaje."
-          required
-        />
-        <Boton type="submit" text="Enviar" action="submit" />
-      </form>
-    </div>
+        <form onSubmit={handleSubmit} className={contacto.formContainer}>
+          <InputField
+            className={contacto.inputField}
+            htmlFor="nombre"
+            label="Nombre:"
+            type="text"
+            name="nombre"
+            id="nombre"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+            placeholder="Ingrese su nombre completo."
+            required
+          />
+          <InputField
+            className={contacto.inputField}
+            htmlFor="correo"
+            label="Correo Electrónico:"
+            type="email"
+            name="email"
+            id="correo"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+            placeholder="Ingrese su Email."
+            required
+          />
+          <InputField
+            className={contacto.inputField}
+            htmlFor="mensaje"
+            label="Mensaje:"
+            type="textarea"
+            name="mensaje"
+            id="mensaje"
+            value={mensaje}
+            onChange={(e) => setMensaje(e.target.value)}
+            placeholder="Deje su mensaje."
+            required
+          />
+          <Boton type="submit" text="Enviar" action="submit" />
+        </form>
+      </div>
+    </>
   );
 };
 
