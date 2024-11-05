@@ -1,0 +1,115 @@
+.tarjetasContainer {
+  padding: 2rem;
+}
+
+.titulo {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.tarjetasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tarjetaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tarjeta {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: white;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.credito {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.debito {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+.chipArea {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+  border-radius: 5px;
+}
+
+.tipo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.numeroTarjeta {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin: 1rem 0;
+}
+
+.detalles {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.2rem;
+}
+
+.valor {
+  font-weight: bold;
+}
+
+.limites,
+.saldo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.acciones {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.accionBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.accionBtn:hover {
+  background-color: #45a049;
+}

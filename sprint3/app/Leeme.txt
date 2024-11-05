@@ -1,4 +1,4 @@
-ABAJO DE TODO EL TXT PUSE EL PROGRESO POR SI QUERES PASAR DIRECTO A LEERLOS
+ABAJO DE TODO EL TXT PUSE EL PROGRESO POR SI QUERES PASAR DIRECTO A LEERLOS    
        
 
 ESTOS PROBLEMITAS LOS COMENTÉ PORQUE ME LOS TIRABA COMO ERROR Y PREFERI ESPERAR A QUE VOS VENGAS QUE SOS CRACKIDOLOMÁSTER😎.
@@ -30,7 +30,7 @@ para el error de Proptypes intenté instalar las dependencias como decia el txt 
 5)agregué "use client" a botón porque en prestamos pasaba que si vamos a usar OnClick necesitamos que se use del lado del cliente
 6)PRESTAMOAgregado prestamo✅
 7)Pegué el Login pero cuando quise utilizarlo al principio no funcionó bien, probablemente lo tengamos que volver a hacer.
-8)Modificación de link en Sidebar y Footer
+8)Modificación de link en Sidebar y Footer✅
 9)Modificación del uso de Image en Header 6:1 y 12:1 
 
 

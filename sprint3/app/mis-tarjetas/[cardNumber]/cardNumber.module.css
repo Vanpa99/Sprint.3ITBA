@@ -9,17 +9,9 @@
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
-
-.descPrincipal {
-  margin-bottom: 10px;
-  padding: 20px;
+.infoForm {
+  margin: 10px 0 0 1rem;
 }
-
-.subtitle {
-  text-align: center;
-  margin-top: -1rem;
-}
-
 .formContainer {
   border: 2px solid var(--difuminado);
   max-width: 80%;
@@ -27,21 +19,11 @@
   padding: 20px;
   border-radius: 5px;
 }
-
-.infoForm {
-  margin: 10px 0 0 1rem;
-}
-
 .inputField {
   width: calc(100% - 22px);
   padding: 10px;
   border: 1px solid var(--difuminado);
   border-radius: 5px;
   margin-bottom: 15px;
-}
-
-.btnContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  background-color: field;
 }

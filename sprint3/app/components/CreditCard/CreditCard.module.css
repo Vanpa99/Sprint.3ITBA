@@ -1,0 +1,59 @@
+.card {
+  width: 320px;
+  height: 200px;
+  padding: 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #434343 0%, #000000 100%);
+  color: white;
+  font-family: monospace;
+  position: relative;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gold {
+  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 100%);
+  color: #000;
+}
+
+.platinum {
+  background: linear-gradient(135deg, #c9d6ff 0%, #e2e2e2 100%);
+  color: #000;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.chip {
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+  border-radius: 8px;
+}
+
+.cardNumber {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.value {
+  font-size: 16px;
+  text-transform: uppercase;
+}

@@ -21,6 +21,9 @@ function Sidebar() {
           <li>
             <Link href="/contacto">Contacto</Link>
           </li>
+          <li>
+            <Link href="/mis-tarjetas">Mis Tarjetas</Link>
+          </li>
         </ul>
       </nav>
     </aside>
