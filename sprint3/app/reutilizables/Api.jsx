@@ -9,7 +9,7 @@ import mon from "../../modules/Moneda.module.css";
 function Saldo({ saldo, fromCurrency, toCurrency }) {
   const [saldoConvertido, setSaldoConvertido] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const apiKey = "4f405531700c0e41a0f0b0f8"; // Aquí va tu API key
+  const apiKey = "8e0dc9919096f91ccd7edb9a"; // Aquí va tu API key
 
   // URL para obtener las tasas de cambio
   const convertUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency}`;
